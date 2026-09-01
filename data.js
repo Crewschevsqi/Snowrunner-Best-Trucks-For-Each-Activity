@@ -183,11 +183,11 @@ const VEHICLES = [
 
   // -- Trailers --
   { id: "zikz_605r_trailers", name: "ZikZ 605R", category: "Trailers", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Trailers", unlocked: false, region: "", image: "" },
+  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Trailers", unlocked: false, region: "Mastodon DLC", image: "" },
   { id: "plad_450_trailers", name: "Plad 450", category: "Trailers", unlocked: false, region: "", image: "" },
-  { id: "kolob_74760_trailers", name: "Kolob 74760", category: "Trailers", unlocked: false, region: "", image: "" },
+  { id: "kolob_74760_trailers", name: "Kolob 74760", category: "Trailers", unlocked: true, region: "", image: "" },
   { id: "derry_special_trailers", name: "Derry Special", category: "Trailers", unlocked: false, region: "", image: "" },
 
   // -- Farming --
-  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "", image: "" }
+  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "Foothills, Austria", image: "" }
 ];
