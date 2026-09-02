@@ -44,21 +44,19 @@ const VEHICLES = [
 
   // -- Logging --
   { id: "aramatsu_forester_logging", name: "Aramatsu Forester", category: "Logging", unlocked: false, region: "", image: "" },
-  { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "", image: "" },
+  { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "Duncan Bay, British Columbia", image: "" },
   { id: "tayga_6455b_logging", name: "Tayga 6455B", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "azov_73210_logging", name: "Azov 73210", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "zikz_612h_logging", name: "ZikZ 612H", category: "Logging", unlocked: false, region: "", image: "" },
-  // DLC: Mack Dual Pack — pojazd dostępny od razu w garażu po zakupie DLC,
-  // nie wymaga odblokowania w regionie.
-  { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: true, region: "", image: "" },
+  { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: false, region: "Mack Dual Pack DLC", image: "" },
 
   // -- Water Transportation --
-  { id: "derry_special_water", name: "Derry Special", category: "Water Transportation", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "", image: "Zikz 612h" },
+  { id: "derry_special_water", name: "Derry Special", category: "Water Transportation", unlocked: false, region: "The Albany River, Ontario", image: "" },
+  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "Mastodon DLC", image: "Zikz 612h.jpg" },
 
   // -- Overloading --
-  { id: "kenworth_963_overloading", name: "Kenworth 963", category: "Overloading", unlocked: false, region: "", image: "" },
+  { id: "kenworth_963_overloading", name: "Kenworth 963", category: "Overloading", unlocked: false, region: "Duncan Bay, British Columbia", image: "" },
   { id: "zikz_612h_overloading", name: "ZikZ 612H", category: "Overloading", unlocked: false, region: "", image: "" },
   { id: "azov_73210_overloading", name: "Azov 73210", category: "Overloading", unlocked: false, region: "", image: "" },
   { id: "azov_atom_overloading", name: "Azov Atom", category: "Overloading", unlocked: false, region: "", image: "" },
