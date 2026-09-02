@@ -49,7 +49,7 @@ const VEHICLES = [
   { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "azov_73210_logging", name: "Azov 73210", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "zikz_612h_logging", name: "ZikZ 612H", category: "Logging", unlocked: false, region: "", image: "" },
-  { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: false, region: "Mack Dual Pack DLC", image: "" },
+  { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: false, region: "Mack Dual Pack DLC", image: "images/mackp.jpg" },
 
   // -- Water Transportation --
   { id: "derry_special_water", name: "Derry Special", category: "Water Transportation", unlocked: false, region: "The Albany River, Ontario", image: "" },
@@ -70,5 +70,5 @@ const VEHICLES = [
   { id: "derry_special_trailers", name: "Derry Special", category: "Trailers", unlocked: false, region: "", image: "" },
 
   // -- Farming --
-  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "", image: "" }
+  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "Foothills, Austria", image: "images/futom.jpg" }
 ];
