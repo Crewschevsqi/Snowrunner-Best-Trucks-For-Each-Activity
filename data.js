@@ -1,28 +1,3 @@
-/* =====================================================================
-   DANE POJAZDÓW I KATEGORII
-   =====================================================================
-   To jest JEDYNE miejsce, w którym należy edytować zawartość aplikacji.
-   Użytkownicy strony NIE mają możliwości dodawania / edytowania / usuwania
-   pojazdów z poziomu interfejsu — to celowe. Aby coś zmienić, edytuj ten
-   plik w kodzie źródłowym i wypchnij zmiany na GitHub.
-
-   1) CATEGORIES — lista nazw kategorii, w kolejności wyświetlania.
-   2) VEHICLES   — lista pojazdów. Każdy obiekt:
-        id        — unikalny identyfikator (bez spacji, np. "scout_800")
-        name      — nazwa wyświetlana
-        category  — musi dokładnie odpowiadać jednej z nazw w CATEGORIES
-        unlocked  — true = dostępny od początku gry, false = trzeba odblokować
-        region    — wymagane tylko gdy unlocked = false (gdzie/jak odblokować)
-        image     — (opcjonalnie) ścieżka do zdjęcia w folderze images/,
-                    np. "images/scout_800.jpg". Jeśli pominiesz albo plik nie
-                    istnieje, pokaże się domyślna ikonka.
-
-   Wszystkie pojazdy poniżej pochodzą wyłącznie z list przesłanych przez
-   Ciebie (zrzuty ekranu). Kategorie Scouts i Special Trailers zostały
-   na razie puste — dodaj do nich pojazdy według tego samego wzoru, gdy
-   będziesz mieć dane.
-   ===================================================================== */
-
 const CATEGORIES = [
   "Scouts",
   "Logging",

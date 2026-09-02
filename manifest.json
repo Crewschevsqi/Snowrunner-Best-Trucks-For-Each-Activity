@@ -1,6 +1,6 @@
 {
-  "name": "Pojazdy — SnowRunner",
-  "short_name": "Pojazdy",
+  "name": "Snowrunner Truck Guide",
+  "short_name": "STG",
   "description": "Baza pojazdów SnowRunner — kategorie, zdjęcia i informacje o odblokowaniu.",
   "start_url": "./index.html",
   "scope": "./",
