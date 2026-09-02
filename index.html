@@ -1,89 +1,89 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#f2f2f7">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Pojazdy">
+<meta name="apple-mobile-web-app-title" content="Vehicles">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Baza pojazdów SnowRunner — kategorie, zdjęcia i informacje o odblokowaniu.">
+<meta name="description" content="SnowRunner vehicle database — categories, photos and unlock information.">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<title>Pojazdy — SnowRunner</title>
+<title>Vehicles — SnowRunner</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app">
 
-  <!-- EKRAN GŁÓWNY: kategorie -->
+  <!-- HOME SCREEN: categories -->
   <div class="screen" id="panelHome">
     <div class="navbar">
       <div class="nav-spacer"></div>
-      <div class="nav-title">Pojazdy</div>
+      <div class="nav-title">Vehicles</div>
       <div class="nav-spacer"></div>
     </div>
     <div class="scroll-area">
-      <div class="large-title">Pojazdy</div>
+      <div class="large-title">Vehicles</div>
       <div class="search-wrap">
         <div class="search-field">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <input type="text" id="searchInput" placeholder="Szukaj kategorii">
+          <input type="text" id="searchInput" placeholder="Search categories">
         </div>
       </div>
-      <div class="section-label">Kategorie</div>
+      <div class="section-label">Categories</div>
       <div class="grouped-list" id="categoryList"></div>
       <div id="homeEmpty" class="empty" style="display:none;">
         <div class="icon">🗂️</div>
-        <div>Brak kategorii.</div>
+        <div>No categories.</div>
       </div>
     </div>
   </div>
 
-  <!-- EKRAN KATEGORII: lista pojazdów -->
+  <!-- CATEGORY SCREEN: vehicle list -->
   <div class="screen" id="panelCategory">
     <div class="navbar">
       <button class="nav-btn" id="btnBack">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        <span>Pojazdy</span>
+        <span>Vehicles</span>
       </button>
-      <div class="nav-title" id="categoryNavTitle">Kategoria</div>
+      <div class="nav-title" id="categoryNavTitle">Category</div>
       <div class="nav-spacer"></div>
     </div>
     <div class="scroll-area">
-      <div class="large-title" id="categoryLargeTitle">Kategoria</div>
+      <div class="large-title" id="categoryLargeTitle">Category</div>
       <div class="search-wrap">
         <div class="search-field">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <input type="text" id="vehicleSearchInput" placeholder="Szukaj pojazdu">
+          <input type="text" id="vehicleSearchInput" placeholder="Search vehicles">
         </div>
       </div>
-      <div class="section-label" id="vehicleCountLabel">0 pojazdów</div>
+      <div class="section-label" id="vehicleCountLabel">0 vehicles</div>
       <div class="grouped-list" id="vehicleList"></div>
       <div id="vehicleEmpty" class="empty" style="display:none;">
         <div class="icon">🚛</div>
-        <div>Brak pojazdów w tej kategorii.</div>
+        <div>No vehicles in this category.</div>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- Karta szczegółów pojazdu (tylko podgląd, bez edycji) -->
+<!-- Vehicle detail card (view-only, no editing) -->
 <div class="overlay" id="detailSheet">
   <div class="sheet-inner">
     <div class="sheet-close-bar" id="detailCloseBar"><div class="grabber"></div></div>
     <div class="detail-scroll">
       <div class="detail-photo" id="detailPhoto">🚛</div>
       <div class="detail-body">
-        <div class="detail-name" id="detailName">Nazwa pojazdu</div>
+        <div class="detail-name" id="detailName">Vehicle name</div>
         <div class="detail-list">
-          <div class="detail-row"><span class="k">Kategoria</span><span class="v" id="detailCategory">—</span></div>
+          <div class="detail-row"><span class="k">Category</span><span class="v" id="detailCategory">—</span></div>
           <div class="detail-row"><span class="k">Status</span><span class="v" id="detailStatus">—</span></div>
-          <div class="detail-row" id="detailRegionRow"><span class="k">Region odblokowania</span><span class="v" id="detailRegion">—</span></div>
+          <div class="detail-row" id="detailRegionRow"><span class="k">Unlock region</span><span class="v" id="detailRegion">—</span></div>
         </div>
       </div>
     </div>

@@ -1,87 +1,86 @@
-# Pojazdy — SnowRunner
+# Vehicles — SnowRunner
 
-Statyczna strona (bez backendu, bez bazy danych) do przeglądania pojazdów
-z SnowRunnera podzielonych na kategorie. Zaprojektowana w minimalistycznym
-stylu iOS i gotowa do zainstalowania jako aplikacja na ekranie głównym
-telefonu (PWA — Progressive Web App).
+A static website (no backend, no database) for browsing SnowRunner
+vehicles sorted into categories. Designed in a minimalist iOS style
+and ready to be installed as an app on a phone's home screen (PWA —
+Progressive Web App).
 
-**Ważne:** to wersja *tylko do odczytu*. Osoby odwiedzające stronę nie mogą
-dodawać, edytować ani usuwać pojazdów z poziomu interfejsu — jedynym
-sposobem zmiany zawartości jest edycja pliku `data.js` w kodzie źródłowym.
+**Important:** this is a *view-only* version. Visitors cannot add,
+edit, or delete vehicles from the interface — the only way to change
+the content is by editing the `data.js` file in the source code.
 
 ---
 
-## 1. Struktura plików
+## 1. File structure
 
 ```
-index.html      – struktura strony
-style.css       – wygląd (styl iOS, minimalistyczny)
-app.js          – logika (tylko wyświetlanie danych)
-data.js         – ⭐ TU EDYTUJESZ POJAZDY I KATEGORIE ⭐
-manifest.json   – konfiguracja PWA (ikona, nazwa aplikacji)
-sw.js           – obsługa trybu offline / instalacji
-icons/          – ikony aplikacji
-images/         – tu wrzucasz zdjęcia pojazdów
-README.md       – ten plik
+index.html      – page structure
+style.css       – look and feel (minimalist iOS style)
+app.js          – logic (display only, no editing)
+data.js         – ⭐ EDIT VEHICLES AND CATEGORIES HERE ⭐
+manifest.json   – PWA configuration (icon, app name)
+sw.js           – offline mode / installability support
+icons/          – app icons
+images/         – put vehicle photos here
+README.md       – this file
 ```
 
-## 2. Jak dodać / zmienić pojazdy
+## 2. How to add / change vehicles
 
-Otwórz plik **`data.js`** i edytuj dwie listy:
+Open the **`data.js`** file and edit the two lists:
 
-- `CATEGORIES` — nazwy kategorii (kolejność = kolejność wyświetlania).
-- `VEHICLES` — lista pojazdów. Każdy wpis wygląda tak:
+- `CATEGORIES` — category names (order = display order).
+- `VEHICLES` — the vehicle list. Each entry looks like this:
 
 ```js
 {
-  id: "moj_pojazd",              // unikalny identyfikator, bez spacji
-  name: "Nazwa pojazdu",
-  category: "Scouts",            // musi pasować do nazwy z CATEGORIES
-  unlocked: true,                // true = od startu gry, false = trzeba odblokować
-  region: "",                    // wypełnij tylko gdy unlocked = false
-  image: "images/moj_pojazd.jpg" // opcjonalnie, zostaw "" jeśli brak zdjęcia
+  id: "my_vehicle",              // unique identifier, no spaces
+  name: "Vehicle name",
+  category: "Scouts",            // must match a name from CATEGORIES
+  unlocked: true,                // true = available from the start, false = must be unlocked
+  region: "",                    // fill in only when unlocked = false
+  image: "images/my_vehicle.jpg" // optional, leave "" if no photo
 }
 ```
 
-W repozytorium znajdują się przykładowe (fikcyjne) dane demonstracyjne —
-podmień je na prawdziwe nazwy i regiony z gry.
+## 3. How to add photos
 
-## 3. Jak dodać zdjęcia
+Drop `.jpg` / `.png` files into the `images/` folder and enter their
+path in that vehicle's `image` field (e.g. `images/scania_74p.jpg`).
+If the file doesn't exist or the field is left empty, the app shows a
+default icon instead of a photo — nothing breaks.
 
-Wrzuć pliki `.jpg` / `.png` do folderu `images/` i wpisz ich ścieżkę
-w polu `image` danego pojazdu (np. `images/scania_74p.jpg`). Jeśli plik
-nie istnieje albo pole zostanie puste, aplikacja pokaże domyślną ikonkę
-zamiast zdjęcia — nic się nie wysypie.
+## 4. Publishing on GitHub Pages
 
-## 4. Publikacja na GitHub Pages
-
-1. Załóż nowe repozytorium na GitHub (np. `snowrunner-pojazdy`).
-2. Wgraj do niego wszystkie pliki z tego folderu (zachowując strukturę,
-   `index.html` musi być w głównym katalogu repozytorium).
-3. Wejdź w **Settings → Pages** w repozytorium.
-4. W sekcji „Build and deployment” wybierz **Deploy from a branch**,
+1. Create a new repository on GitHub (e.g. `snowrunner-vehicles`).
+2. Upload all the files from this folder to it (keeping the folder
+   structure — `index.html` must be in the root of the repository).
+3. Go to **Settings → Pages** in the repository.
+4. Under "Build and deployment", choose **Deploy from a branch**,
    branch **main**, folder **/ (root)** → **Save**.
-5. Po chwili GitHub poda adres strony, zwykle w formacie:
-   `https://twoja-nazwa-uzytkownika.github.io/snowrunner-pojazdy/`
-6. Każda zmiana w plikach (np. w `data.js`) i wypchnięcie jej (`git push`)
-   automatycznie zaktualizuje działającą stronę po 1–2 minutach.
+5. After a moment, GitHub will show the site's address, usually in
+   the format:
+   `https://your-username.github.io/snowrunner-vehicles/`
+6. Every change to the files (e.g. in `data.js`) followed by pushing
+   it (`git push`) automatically updates the live site within 1–2
+   minutes.
 
-## 5. Instalacja jako aplikacja na telefonie
+## 5. Installing as an app on your phone
 
 **iPhone / iPad (Safari):**
-Otwórz stronę → przycisk **Udostępnij** (kwadrat ze strzałką) →
-**Dodaj do ekranu początkowego**. Aplikacja uruchomi się w pełnym ekranie,
-bez paska adresu przeglądarki.
+Open the site → tap the **Share** button (square with an arrow) →
+**Add to Home Screen**. The app launches full-screen, with no
+browser address bar.
 
 **Android (Chrome):**
-Otwórz stronę → menu (⋮) → **Dodaj do ekranu głównego** / **Zainstaluj
-aplikację**.
+Open the site → menu (⋮) → **Add to Home screen** / **Install app**.
 
-**Komputer (Chrome/Edge):**
-Ikona instalacji pojawi się w pasku adresu po prawej stronie.
+**Computer (Chrome/Edge):**
+An install icon will appear on the right side of the address bar.
 
-## 6. Aktualizacje
+## 6. Updates
 
-Ponieważ strona działa też offline (dzięki `sw.js`), po wgraniu nowej
-wersji danych czasem trzeba ręcznie odświeżyć aplikację (przeciągnięcie
-w dół / wymuszone odświeżenie), żeby nowa wersja `data.js` się pobrała.
+Because the site also works offline (thanks to `sw.js`), after
+uploading a new version of the data you may sometimes need to
+manually refresh the app (pull down / force refresh) for the new
+version of `data.js` to be fetched.

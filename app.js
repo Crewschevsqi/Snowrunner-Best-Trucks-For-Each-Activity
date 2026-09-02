@@ -1,9 +1,9 @@
 /* =====================================================================
-   LOGIKA APLIKACJI (tylko do odczytu)
+   APPLICATION LOGIC (view-only)
    =====================================================================
-   Ten plik NIE pozwala użytkownikom dodawać/edytować/usuwać pojazdów.
-   Jedynym miejscem do zmiany zawartości jest data.js — patrz komentarz
-   na górze tego pliku.
+   This file does NOT let users add/edit/delete vehicles.
+   The only place to change the content is data.js — see the comment
+   at the top of that file.
    ===================================================================== */
 
 const el = (id) => document.getElementById(id);
@@ -18,7 +18,7 @@ function chevSvg(){
   return '<svg class="chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l6 6-6 6"/></svg>';
 }
 
-/* ---------- HOME: lista kategorii ---------- */
+/* ---------- HOME: category list ---------- */
 function renderHome(){
   const q = (el('searchInput').value || '').trim().toLowerCase();
   const wrap = el('categoryList');
@@ -43,7 +43,7 @@ function renderHome(){
 }
 el('searchInput').addEventListener('input', renderHome);
 
-/* ---------- Nawigacja Home <-> Kategoria ---------- */
+/* ---------- Navigation Home <-> Category ---------- */
 function openCategory(cat){
   activeCategory = cat;
   el('categoryNavTitle').textContent = cat;
@@ -59,13 +59,13 @@ function closeCategory(){
 }
 el('btnBack').onclick = closeCategory;
 
-/* ---------- Lista pojazdów ---------- */
+/* ---------- Vehicle list ---------- */
 function renderVehicleList(){
   const q = (el('vehicleSearchInput').value || '').trim().toLowerCase();
   let list = VEHICLES.filter(v => v.category === activeCategory);
   if(q) list = list.filter(v => v.name.toLowerCase().includes(q));
 
-  el('vehicleCountLabel').textContent = list.length + (list.length === 1 ? ' pojazd' : ' pojazdów');
+  el('vehicleCountLabel').textContent = list.length + (list.length === 1 ? ' vehicle' : ' vehicles');
   const wrap = el('vehicleList');
   wrap.innerHTML = '';
 
@@ -87,7 +87,7 @@ function renderVehicleList(){
       <div class="thumb">${thumbContent}</div>
       <div class="row-main">
         <div class="row-title">${escapeHtml(v.name)}</div>
-        <div class="row-sub">${v.unlocked ? 'Od początku gry' : ('Region: ' + escapeHtml(v.region || '—'))}</div>
+        <div class="row-sub">${v.unlocked ? 'Available from the start' : ('Region: ' + escapeHtml(v.region || '—'))}</div>
       </div>
       <div class="row-trail">
         <span class="dot ${v.unlocked ? 'on' : 'off'}"></span>
@@ -99,7 +99,7 @@ function renderVehicleList(){
 }
 el('vehicleSearchInput').addEventListener('input', renderVehicleList);
 
-/* ---------- Karta szczegółów pojazdu (tylko podgląd) ---------- */
+/* ---------- Vehicle detail card (view-only) ---------- */
 function openDetail(v){
   const photo = el('detailPhoto');
   photo.innerHTML = v.image
@@ -107,7 +107,7 @@ function openDetail(v){
     : '🚛';
   el('detailName').textContent = v.name;
   el('detailCategory').textContent = v.category;
-  el('detailStatus').textContent = v.unlocked ? 'Od początku gry' : 'Do odblokowania';
+  el('detailStatus').textContent = v.unlocked ? 'Available from the start' : 'Needs to be unlocked';
   const regionRow = el('detailRegionRow');
   if(v.unlocked){
     regionRow.style.display = 'none';
@@ -125,7 +125,7 @@ el('detailCloseBar').addEventListener('click', () => el('detailSheet').classList
 /* ---------- Init ---------- */
 renderHome();
 
-/* ---------- PWA: rejestracja service workera ---------- */
+/* ---------- PWA: service worker registration ---------- */
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').catch(() => {});

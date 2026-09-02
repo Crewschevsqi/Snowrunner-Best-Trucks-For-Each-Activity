@@ -8,15 +8,15 @@ const CATEGORIES = [
 ];
 
 const VEHICLES = [
-  // ---- Pojazdy dodane przez użytkownika (lista ze zrzutów ekranu) ----
-  // Status odblokowania i region NIE zostały podane w źródle — pola
-  // "unlocked"/"region" ustawione są tymczasowo na false/"" (pokaże się
-  // "Region: —"). Uzupełnij te dane, jeśli je znasz.
-  // Te same modele pojazdów pojawiają się w kilku kategoriach (bo w grze
-  // mogą wykonywać kilka rodzajów zadań) — dlatego mają osobne wpisy
-  // z unikalnym "id" dla każdej kategorii.
+  // ---- Vehicles added by the user ----
+  // Unlock status and region come from the user's own data. Fields left
+  // as false/"" show "Region: —" in the app — fill them in if you know
+  // the correct value.
+  // The same vehicle model can appear in several categories (since in
+  // the game it can be used for several job types) — that's why each
+  // one has its own entry with a unique "id" per category.
 
-// -- Scouts --
+  // -- Scouts --
   { id: "Tatarin", name: "Tuz 420 Tatarin", category: "Scouts", unlocked: false, region: "Zimnegorsk, Taymyr", image: "images/tatarin.jpg" },
 
   // -- Logging --
