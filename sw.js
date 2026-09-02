@@ -1,8 +1,13 @@
-/* Prosty service worker: cache-first dla plików aplikacji,
-   dzięki czemu strona działa też offline po pierwszym wejściu
-   i można ją "zainstalować" na ekranie głównym. */
+/* Service worker: NETWORK-FIRST dla plików aplikacji (HTML/CSS/JS/dane),
+   dzięki czemu każda zmiana w kodzie/danych jest widoczna od razu przy
+   następnym otwarciu strony (o ile jest internet). Dla zdjęć w images/
+   i ikon w icons/ używamy cache-first (rzadko się zmieniają, dzięki temu
+   ładują się błyskawicznie i działają offline).
 
-const CACHE_NAME = 'pojazdy-cache-v1';
+   CACHE_NAME zmieniony na v2 — to samo w sobie kasuje starą, "zaklejoną"
+   wersję cache u wszystkich, którzy mieli zainstalowaną wcześniejszą appkę. */
+
+const CACHE_NAME = 'pojazdy-cache-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -32,20 +37,43 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+function isStaticAsset(url){
+  return url.pathname.includes('/images/') || url.pathname.includes('/icons/');
+}
+
 self.addEventListener('fetch', (event) => {
   if(event.request.method !== 'GET') return;
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if(cached) return cached;
-      return fetch(event.request)
-        .then((response) => {
-          if(response.ok && response.type === 'basic'){
+  const url = new URL(event.request.url);
+
+  if(isStaticAsset(url)){
+    // Zdjęcia/ikony: cache-first (szybko + offline), ale dokładane do cache
+    // przy pierwszym pobraniu, więc nowe zdjęcia i tak się pojawią.
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if(cached) return cached;
+        return fetch(event.request).then((response) => {
+          if(response.ok){
             const clone = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
           }
           return response;
-        })
-        .catch(() => cached);
-    })
+        });
+      })
+    );
+    return;
+  }
+
+  // HTML/CSS/JS/JSON (w tym data.js): network-first, żeby zmiany z GitHuba
+  // były widoczne od razu. Cache służy tylko jako zapasowa wersja offline.
+  event.respondWith(
+    fetch(event.request)
+      .then((response) => {
+        if(response.ok){
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        }
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
 });

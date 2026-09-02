@@ -17,8 +17,10 @@
                     np. "images/scout_800.jpg". Jeśli pominiesz albo plik nie
                     istnieje, pokaże się domyślna ikonka.
 
-   Poniżej znajdują się PRZYKŁADOWE dane demonstracyjne — nazwy i regiony
-   są przykładowe/fikcyjne, podmień je na prawdziwe dane z gry.
+   Wszystkie pojazdy poniżej pochodzą wyłącznie z list przesłanych przez
+   Ciebie (zrzuty ekranu). Kategorie Scouts i Special Trailers zostały
+   na razie puste — dodaj do nich pojazdy według tego samego wzoru, gdy
+   będziesz mieć dane.
    ===================================================================== */
 
 const CATEGORIES = [
@@ -32,6 +34,14 @@ const CATEGORIES = [
 ];
 
 const VEHICLES = [
+  // ---- Pojazdy dodane przez użytkownika (lista ze zrzutów ekranu) ----
+  // Status odblokowania i region NIE zostały podane w źródle — pola
+  // "unlocked"/"region" ustawione są tymczasowo na false/"" (pokaże się
+  // "Region: —"). Uzupełnij te dane, jeśli je znasz.
+  // Te same modele pojazdów pojawiają się w kilku kategoriach (bo w grze
+  // mogą wykonywać kilka rodzajów zadań) — dlatego mają osobne wpisy
+  // z unikalnym "id" dla każdej kategorii.
+
   // -- Logging --
   { id: "aramatsu_forester_logging", name: "Aramatsu Forester", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "", image: "" },
@@ -39,10 +49,13 @@ const VEHICLES = [
   { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "azov_73210_logging", name: "Azov 73210", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "zikz_612h_logging", name: "ZikZ 612H", category: "Logging", unlocked: false, region: "", image: "" },
+  // DLC: Mack Dual Pack — pojazd dostępny od razu w garażu po zakupie DLC,
+  // nie wymaga odblokowania w regionie.
+  { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: true, region: "", image: "" },
 
   // -- Water Transportation --
   { id: "derry_special_water", name: "Derry Special", category: "Water Transportation", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "Mastodon DLC", image: "images/Zikz 612h.jpg" },
+  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "", image: "" },
 
   // -- Overloading --
   { id: "kenworth_963_overloading", name: "Kenworth 963", category: "Overloading", unlocked: false, region: "", image: "" },
@@ -53,11 +66,11 @@ const VEHICLES = [
 
   // -- Trailers --
   { id: "zikz_605r_trailers", name: "ZikZ 605R", category: "Trailers", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Trailers", unlocked: false, region: "Mastodon DLC", image: "" },
+  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Trailers", unlocked: false, region: "", image: "" },
   { id: "plad_450_trailers", name: "Plad 450", category: "Trailers", unlocked: false, region: "", image: "" },
-  { id: "kolob_74760_trailers", name: "Kolob 74760", category: "Trailers", unlocked: true, region: "", image: "" },
+  { id: "kolob_74760_trailers", name: "Kolob 74760", category: "Trailers", unlocked: false, region: "", image: "" },
   { id: "derry_special_trailers", name: "Derry Special", category: "Trailers", unlocked: false, region: "", image: "" },
 
   // -- Farming --
-  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "Foothills, Austria", image: "" }
+  { id: "futom_7290ra_farming", name: "Futom 7290 RA", category: "Farming", unlocked: false, region: "", image: "" }
 ];
