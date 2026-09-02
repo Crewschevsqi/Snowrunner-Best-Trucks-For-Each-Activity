@@ -55,7 +55,7 @@ const VEHICLES = [
 
   // -- Water Transportation --
   { id: "derry_special_water", name: "Derry Special", category: "Water Transportation", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "", image: "" },
+  { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "", image: "Zikz 612h" },
 
   // -- Overloading --
   { id: "kenworth_963_overloading", name: "Kenworth 963", category: "Overloading", unlocked: false, region: "", image: "" },
