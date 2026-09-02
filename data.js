@@ -51,7 +51,7 @@ const VEHICLES = [
   { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: false, region: "Mack Dual Pack DLC", image: "images/mackp.jpg" },
 
   // -- Water Transportation --
-  { id: "derry_special_water", name: "Derry Special 15C-177", category: "Water Transportation", unlocked: false, region: "The Albany River, Ontario", image: "" },
+  { id: "derry_special_water", name: "Derry Special 15C-177", category: "Water Transportation", unlocked: false, region: "The Albany River, Ontario", image: "images/derrywater.jpg" },
   { id: "zikz_612h_water", name: "ZikZ 612H", category: "Water Transportation", unlocked: false, region: "Mastodon DLC", image: "images/Zikz 612h.jpg" },
 
   // -- Overloading --
@@ -62,8 +62,8 @@ const VEHICLES = [
   { id: "paystar_5600ts_overloading", name: "Paystar 5600 TS", category: "Overloading", unlocked: false, region: "", image: "" },
 
   // -- Special Trailers --
-  { id: "zikz_605r_trailers", name: "ZikZ 605R", category: "Special Trailers", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Special Trailers", unlocked: false, region: "", image: "" },
+  { id: "zikz_605r_trailers", name: "ZikZ 605R", category: "Special Trailers", unlocked: false, region: "Cosmodrome, Amur", image: "images/zikz605r.jpg" },
+  { id: "zikz_612h_trailers", name: "ZikZ 612H", category: "Special Trailers", unlocked: false, region: "Mastodon DLC", image: "images/zikzspecial.jpg" },
   { id: "plad_450_trailers", name: "Plad 450", category: "Special Trailers", unlocked: false, region: "Zherbai Quarries, Almaty", image: "plad450.jpg" },
   { id: "kolob_74760_trailers", name: "Kolob 74760", category: "Special Trailers", unlocked: true, region: "", image: "images/kolob74760.jpg" },
   { id: "derry_special_trailers", name: "Derry Special 15C-177", category: "Special Trailers", unlocked: false, region: "The Albany River, Ontario", image: "images/derry15c.jpg" },
