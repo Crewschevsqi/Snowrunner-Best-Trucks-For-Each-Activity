@@ -42,7 +42,7 @@ const VEHICLES = [
   // z unikalnym "id" dla każdej kategorii.
 
   // -- Logging --
-  { id: "aramatsu_forester_logging", name: "Aramatsu Forester", category: "Logging", unlocked: false, region: "", image: "" },
+  { id: "aramatsu_forester_logging", name: "Aramatsu Forester", category: "Logging", unlocked: false, region: "The Lowland, Maine", image: "images/aramatsu.jpg" },
   { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "Duncan Bay, British Columbia", image: "" },
   { id: "tayga_6455b_logging", name: "Tayga 6455B", category: "Logging", unlocked: false, region: "", image: "" },
   { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "", image: "" },
