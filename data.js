@@ -21,11 +21,11 @@ const VEHICLES = [
 
   // -- Logging --
   { id: "aramatsu_forester_logging", name: "Aramatsu Forester", category: "Logging", unlocked: false, region: "The Lowland, Maine", image: "images/aramatsu.jpg" },
-  { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "Duncan Bay, British Columbia", image: "" },
-  { id: "tayga_6455b_logging", name: "Tayga 6455B", category: "Logging", unlocked: false, region: "", image: "" },
-  { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "", image: "" },
-  { id: "azov_73210_logging", name: "Azov 73210", category: "Logging", unlocked: false, region: "", image: "" },
-  { id: "zikz_612h_logging", name: "ZikZ 612H", category: "Logging", unlocked: false, region: "", image: "" },
+  { id: "kenworth_963_logging", name: "Kenworth 963", category: "Logging", unlocked: false, region: "Duncan Bay, British Columbia", image: "images/kennylog.jpg" },
+  { id: "tayga_6455b_logging", name: "Tayga 6455B", category: "Logging", unlocked: false, region: "The Lowland, Maine", image: "images/taygalog.png" },
+  { id: "plad_450_logging", name: "Plad 450", category: "Logging", unlocked: false, region: "Zherbai Quarries, Almaty", image: "plad450log.jpg" },
+  { id: "azov_73210_logging", name: "Azov 73210", category: "Logging", unlocked: true, region: "", image: "images/73210log.jpg" },
+  { id: "zikz_612h_logging", name: "ZikZ 612H", category: "Logging", unlocked: false, region: "Mastodon DLC", image: "images/612log.jpg" },
   { id: "mack_pinnacle_logging", name: "Mack Pinnacle", category: "Logging", unlocked: false, region: "Mack Dual Pack DLC", image: "images/mackp.jpg" },
 
   // -- Water Transportation --
