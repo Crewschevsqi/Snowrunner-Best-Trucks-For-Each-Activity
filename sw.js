@@ -7,7 +7,7 @@
    CACHE_NAME was bumped to v2 — this alone clears the old, "stuck"
    cache for anyone who had a previous version of the app installed. */
 
-const CACHE_NAME = 'vehicles-cache-v2';
+const CACHE_NAME = 'vehicles-cache-v3';
 const ASSETS = [
   './',
   './index.html',

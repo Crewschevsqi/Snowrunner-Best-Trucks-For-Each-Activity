@@ -125,6 +125,39 @@ el('detailCloseBar').addEventListener('click', () => el('detailSheet').classList
 /* ---------- Init ---------- */
 renderHome();
 
+/* ---------- Theme toggle (light ☀️ / dark 🌙) ---------- */
+function sunIcon(){
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.93 19.07l1.7-1.7M17.37 6.63l1.7-1.7"/></svg>';
+}
+function moonIcon(){
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.3A8.7 8.7 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8z"/></svg>';
+}
+function applyTheme(isDark){
+  document.body.classList.toggle('dark', isDark);
+  const icon = isDark ? moonIcon() : sunIcon();
+  document.querySelectorAll('.theme-toggle-icon').forEach((el) => { el.innerHTML = icon; });
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', isDark ? '#000000' : '#f2f2f7');
+  try{ localStorage.setItem('theme', isDark ? 'dark' : 'light'); }catch(e){}
+}
+function toggleTheme(){
+  applyTheme(!document.body.classList.contains('dark'));
+}
+function initTheme(){
+  let isDark = false;
+  try{
+    const saved = localStorage.getItem('theme');
+    if(saved === 'dark' || saved === 'light'){
+      isDark = saved === 'dark';
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+      isDark = true;
+    }
+  }catch(e){}
+  applyTheme(isDark);
+}
+document.querySelectorAll('.theme-toggle-btn').forEach((btn) => btn.addEventListener('click', toggleTheme));
+initTheme();
+
 /* ---------- PWA: service worker registration ---------- */
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
